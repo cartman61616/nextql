@@ -1,3 +1,5 @@
-export const experimental = {
-    outputStandalone: true,
-};
+module.exports = {
+    experimental: {
+      outputStandalone: true,
+    },
+  }
