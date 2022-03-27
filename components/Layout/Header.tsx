@@ -26,7 +26,15 @@ const Header = () => {
           </a>
         </Link>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          {user ? (
+          {user && (
+            <div className='flex items-center justify-center mr-5 capitalize bg-blue-500 py-1 px-3 rounded-md text-white'>
+              <Link href="/admin">
+                <a>
+                  + Create
+                </a>
+              </Link>
+            </div>
+          )}
             <div className="flex items-center space-x-5">
               <Link href="/favorites">
                 <a className="inline-flex items-center border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">

@@ -141,6 +141,16 @@ export const LinksQuery = extendType({
             throw new Error(`You need to be logged in to perform an action`)
           }
 
+          const user = await ctx.prisma.user.findUnique({
+            where: {
+              email: ctx.user.email,
+            },
+          })
+
+          if (user.role !== 'ADMIN') {
+            throw new Error(`You do not have permission to perform action`)
+          }
+
           const newLink = {
             title: args.title,
             url: args.url,
